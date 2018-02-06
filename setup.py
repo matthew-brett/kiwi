@@ -11,7 +11,7 @@ from setuptools.command.build_ext import build_ext
 
 ext_modules = [
     Extension(
-        'kiwisolver',
+        'kiwisolver._kiwisolver',
         ['py/kiwisolver.cpp',
          'py/constraint.cpp',
          'py/expression.cpp',
@@ -50,6 +50,7 @@ setup(
     description='A fast implementation of the Cassowary constraint solver',
     long_description=open('README.rst').read(),
     install_requires=['setuptools'],
+    packages = ['kiwisolver'],
     ext_modules=ext_modules,
     cmdclass={'build_ext': BuildExt},
 )
